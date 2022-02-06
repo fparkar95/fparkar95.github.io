@@ -1,0 +1,24 @@
+.grid {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+.circle-container{
+    display: block;
+    max-width: fit-content;
+    margin-top: -30%;
+}
+
+.answer-container{
+    margin-left: 20%;
+    max-width: max-content;
+}
+
+  
+.button-grid {
+    margin-top: 5%;
+    padding: 10px;
+    justify-items: center;
+}

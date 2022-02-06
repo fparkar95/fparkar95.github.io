@@ -1,0 +1,26 @@
+<div class="answer-container">
+    <h3>Correct Answers: {{correctCounter}}</h3>
+</div>
+
+<div class="circle-container">
+    <app-color-circle [hex]="correctHex"></app-color-circle>
+</div>
+
+<div *ngIf="!isShare" class="grid button-grid btn-group" role="group" aria-label="Three Column Button Matrix">
+    <div *ngFor="let option of options">
+        <button type="button" class="btn btn-outline-primary btn-lg" (click)="optionSelected(option)">{{option.name}}</button>
+    </div>
+</div>
+
+
+<div *ngIf="isShare">
+    <share-buttons theme= "circles-dark"
+        [include]="['copy', 'facebook', 'email', 'messenger','sms','whatsapp']"
+        url="http://localhost:4200/"
+        description="Guessed {{correctCounter}} colors in Colorz!! Your turn to play!"
+        class="pt-5">
+    </share-buttons>
+    <span>
+        <button type="button" class="btn btn-success btn-lg" style="justify-self: center;" (click)="restart()">Play Again?</button>
+    </span>
+</div>
