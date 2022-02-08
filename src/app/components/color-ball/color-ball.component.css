@@ -42,14 +42,6 @@
     .ball.bubble {
       -webkit-animation: bubble-anim 5s ease-in-out infinite;
       animation: bubble-anim 5s ease-in-out infinite; }
-      .ball.bubble:before {
-        -webkit-filter: blur(0);
-        filter: blur(2px);
-        height: 80%;
-        width: 40%;
-        background: radial-gradient(circle at 130% 130%, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0) 46%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.8) 58%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0) 100%);
-        -webkit-transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg);
-        transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg); }
       .ball.bubble:after {
         display: block;
       }

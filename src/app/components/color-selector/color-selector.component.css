@@ -18,14 +18,13 @@
 
 
 .answer-container{
-    animation: fadeIn linear 1s;
-    -webkit-animation: fadeIn linear 1s;
-    -moz-animation: fadeIn linear 1s;
-    -o-animation: fadeIn linear 1s;
-    -ms-animation: fadeIn linear 1s;
+    animation: fadeIn linear 2s;
+    -webkit-animation: fadeIn linear 2s;
+    -moz-animation: fadeIn linear 2s;
+    -o-animation: fadeIn linear 2s;
+    -ms-animation: fadeIn linear 2s;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     border-style: ridge;
-    border-radius: 25%;
     color: white;
     background-color: dimgrey;
   }
