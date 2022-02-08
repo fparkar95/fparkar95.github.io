@@ -6,7 +6,6 @@
 }
 
 .info-button{
-    margin-top: -1%;
     color: goldenrod;
     border-radius: 100%;
 }
@@ -23,19 +22,19 @@
     -moz-animation: fadeIn linear 1.5s;
     -o-animation: fadeIn linear 1.5s;
     -ms-animation: fadeIn linear 1.5s;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, unset;
     color: white;
     background-color: royalblue;
   }
 
   .answer-container > h3 {
     font-weight:bolder;
-    font-size: xxx-large;
+    font-size: xx-large
   }
   
   .answer-container > h4 {
     font-weight:bolder;
-    font-size: xx-large;
+    font-size: x-large;
   }
   @keyframes fadeIn {
     0% {opacity:0;}
