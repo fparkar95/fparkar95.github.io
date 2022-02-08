@@ -1,12 +1,9 @@
 <div class="answer-container">
-    <h3>Score: {{score}}</h3>
+    <h3>Score: {{score}}
+        <button class="info-button btn btn-md" (click)="openInfoDialog()"><i class="fa fa-question-circle fa-2x" ></i></button>
+    </h3>
     <h4 *ngIf="!isShare">Guesses Remaining in this Round: {{4 - numOfTries}}</h4>
 </div>
-<div *ngif="!isShare"class="instructions">
-    <p>Attempt #1 = 5 points</p>
-    <p>Attempt #2 = 2 points</p>
-    <p>Attempt #3 = 1 point</p>
-</div>  
 <div class="circle-container">
     <app-color-circle [hex]="correctHex"></app-color-circle>
 </div>  

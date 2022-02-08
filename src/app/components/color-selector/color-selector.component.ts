@@ -140,4 +140,21 @@ export class ColorSelectorComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
+
+  openInfoDialog(){
+    Swal.fire({
+      title: 'Instructions',
+      html: `<h3>Guess as many colors in a row!</h3>
+              <p>Attempt #1 = 5 points</p>
+              <p>Attempt #2 = 2 points</p>
+              <p>Attempt #3 = 1 point</p>`,
+      icon: 'question',
+      confirmButtonText: 'Got it!',
+      allowOutsideClick: false,
+      showCloseButton: true
+    })
+    .then(async (result) => {
+      result.isConfirmed;
+    });
+  }
 }

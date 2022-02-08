@@ -5,6 +5,13 @@
     align-items: center;
 }
 
+.info-button{
+    padding: 10px;
+    margin-left: 2%;
+    border-radius: 60%;
+    border-color: black;
+    border: solid;
+}
 .circle-container{
     display: flex;
     max-width: fit-content;
