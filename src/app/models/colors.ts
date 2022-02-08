@@ -48,3 +48,9 @@ export class MockColorsResponse {
         return this.options[Math.floor(Math.random() * this.options.length)];
     }
 }
+
+export enum Points{
+    FIVE = 5,
+    TWO = 2,
+    ONE = 1
+}

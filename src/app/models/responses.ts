@@ -22,7 +22,6 @@ const compliments:string [] =
 
 const insults:string [] =
 [
-    "You suck! What are you? Color Blind?",
     "Life can be tough, but guessing colors shouldn't be",
     "Pathetic. Pathetic. Pathetic.",
     "HAA! haaa hahahahahaahaha",

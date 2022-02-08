@@ -1,5 +1,27 @@
 .container{
     display: flex; 
     justify-content:center; 
-    align-items:center;
+    text-align: -webkit-center;
+}
+
+
+h1 {
+  padding: 8%;
+  text-align: center;
+  font-family: 'Oswald', Helvetica, sans-serif;
+  font-size: 40px;
+  transform: skewY(-5deg);
+  letter-spacing: 4px;
+  word-spacing: -8px;
+  color: rgb(71, 166, 255);
+  text-shadow: 
+    -1px -1px 0 rgb(34, 80, 178),
+    -2px -2px 0 rgb(34, 80, 178),
+    -3px -3px 0 rgb(34, 80, 178),
+    -4px -4px 0 rgb(34, 80, 178),
+    -5px -5px 0 rgb(34, 80, 178),
+    -6px -6px 0 rgb(34, 80, 178),
+    -7px -7px 0 rgb(34, 80, 178),
+    -8px -8px 0 rgb(34, 80, 178),
+    -30px 20px 40px rgb(37, 37, 37)
 }

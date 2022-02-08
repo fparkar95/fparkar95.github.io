@@ -1,8 +1,9 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Answer } from 'src/app/models/answer';
-import { Color, ColorData, MockColorsResponse } from 'src/app/models/colors';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable, Subject, Subscription, takeUntil } from 'rxjs';
+import { Color, ColorData, MockColorsResponse, Points } from 'src/app/models/colors';
 import { GuessFeedback } from 'src/app/models/responses';
 import { ColorsService } from 'src/app/services/colors.service';
+import { DataStoreService } from 'src/app/services/data-store.service';
 import Swal from 'sweetalert2';
 
 
@@ -11,24 +12,30 @@ import Swal from 'sweetalert2';
   templateUrl: './color-selector.component.html',
   styleUrls: ['./color-selector.component.css']
 })
-export class ColorSelectorComponent implements OnInit {
+export class ColorSelectorComponent implements OnInit, OnDestroy {
 
   
   options: Color[];
   correctColor: Color; 
   correctHex: string;
   feedback: GuessFeedback;
-  correctCounter: number = 0;
+  numOfTries: number = 1;
+  score: number = 0;
   isShare: boolean = false;
   private mockUrl: string = 'assets/data.json';
+  disabledOptions: Color[] = []
+  sub:Subscription
 
-  @Output() answerSelected = new EventEmitter<Answer>();
+  public score$: Observable<number>;
+
   
-  constructor(private colorService: ColorsService) { }
+  constructor(private colorService: ColorsService,
+              private dataStore: DataStoreService) { }
   ngOnInit(): void {
 
+    this.score$ = this.dataStore.score$;
     //TODO: Uncomment when api is required/ready, use mock until then
-    //this.loadApiData();
+    //this.loadApiData()
     this.loadMockData();
   }
 
@@ -39,38 +46,47 @@ export class ColorSelectorComponent implements OnInit {
       this.correctHex = `#${res.correctAnswer.hex}`;
     })
 
+    this.numOfTries = 1; //should reset when new color is loaded
     this.feedback = new GuessFeedback();
   }
 
   private loadMockData(){
+
+    this.sub = this.score$.subscribe(val => this.score = val);
+
+    this.numOfTries = 1; //should reset when new color is loaded
+    //if page is refreshed
+    if(this.score == 0 && localStorage["score"]){
+      this.score = new Number(localStorage.getItem('score')).valueOf(); 
+      this.numOfTries = new Number(localStorage.getItem('numOfTries')).valueOf();
+    }
+    
+    //TODO: localstorage for colors and disabled options 
     this.colorService.getColorsFromFile(this.mockUrl).subscribe((res: MockColorsResponse) =>{
       this.options = res.options;
       this.correctColor = res.correctAnswer;
       this.correctHex = `#${res.correctAnswer.hex}`;
-    })
-
+    }); 
+    
     this.feedback = new GuessFeedback();
+    this.sub.unsubscribe();
   }
 
 
   optionSelected(entry: Color){
     
     if(entry.hex === this.correctColor.hex){
-      this.correctCounter++;
+      this.disabledOptions = [];
+      this.dataStore.calculateScore(this.score,this.numOfTries);
+
       Swal.fire({
         title: 'CORRECT!!!',
         html: `<h3>${this.feedback.compliment}</h3>
                <h4>The correct answer is ${this.correctColor.name}</h4>`,
         icon: 'success',
         confirmButtonText: 'Next!',
-        showCancelButton: true,
-        cancelButtonText: "Share",
-        cancelButtonColor: "orange",
         allowOutsideClick: false
       }).then(async (result) => {
-        if(result.dismiss === Swal.DismissReason.cancel){
-          this.isShare = true;
-        }
         if (result.value) {
           //TODO: Uncomment when api is required/ready, use mock until then
           //this.loadApiData();
@@ -78,7 +94,10 @@ export class ColorSelectorComponent implements OnInit {
         }
       });
     }
-    else{
+    else if(this.numOfTries >= 3 && entry.hex !== this.correctColor.hex){
+      
+      this.disabledOptions = [];
+      
       Swal.fire({
         title: 'WRONG!!!',
         html: `<h3>${this.feedback.insult}</h3>
@@ -87,7 +106,7 @@ export class ColorSelectorComponent implements OnInit {
         confirmButtonText: 'Try Again?',
         showCancelButton: true,
         cancelButtonText: "Share",
-        cancelButtonColor: "orange",
+        cancelButtonColor: "green",
         allowOutsideClick: false
       }).then(async (result) => {
         if(result.dismiss === Swal.DismissReason.cancel){
@@ -98,18 +117,27 @@ export class ColorSelectorComponent implements OnInit {
         }
       });
     }
+    else{
+      this.numOfTries++;
+      localStorage.setItem("numOfTries", this.numOfTries.toString());
+      this.disabledOptions.push(entry);
+      localStorage.setItem("disabledOptions", JSON.stringify({data: this.disabledOptions}));
+    }
   }
+
 
   restart(){
     this.isShare = false;
-    this.correctCounter = 0;
+    this.numOfTries = 1;
+    localStorage.clear();
+    this.dataStore.setScore(0);
     
     //TODO: Uncomment when api is required/ready, use mock until then
     //this.loadApiData();
     this.loadMockData();
   }
 
-
-
- 
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
 }

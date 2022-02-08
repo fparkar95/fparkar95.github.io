@@ -8,7 +8,8 @@ import { SpinnerOverlayComponent } from './components/spinner-overlay/spinner-ov
 import { ColorCircleComponent } from './components/color-circle/color-circle.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
-import { ShareIconsModule } from 'ngx-sharebuttons/icons'
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+import { KeyboardComponent } from './components/keyboard/keyboard.component'
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ShareIconsModule } from 'ngx-sharebuttons/icons'
     ColorSelectorComponent,
     SpinnerOverlayComponent,
     ColorCircleComponent,
+    KeyboardComponent,
   ],
   imports: [
     BrowserModule,

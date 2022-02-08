@@ -6,19 +6,37 @@
 }
 
 .circle-container{
-    display: block;
+    display: flex;
     max-width: fit-content;
-    margin-top: -30%;
 }
 
 .answer-container{
-    margin-left: 20%;
-    max-width: max-content;
+    margin-top: -20%;
 }
 
+p{
+    font-family: monospace;
+}
   
 .button-grid {
     margin-top: 5%;
     padding: 10px;
     justify-items: center;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: red;
+  color: white;
+}
+
+.input-container {
+    margin-top: 5%;
+    align-content: center;
+}
+
+.instructions {
+    line-height: 10px;
+    padding-top: 1%;
 }
