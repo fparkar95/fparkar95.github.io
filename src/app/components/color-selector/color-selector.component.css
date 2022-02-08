@@ -18,22 +18,25 @@
 
 
 .answer-container{
-    animation: fadeIn linear 2s;
-    -webkit-animation: fadeIn linear 2s;
-    -moz-animation: fadeIn linear 2s;
-    -o-animation: fadeIn linear 2s;
-    -ms-animation: fadeIn linear 2s;
+    animation: fadeIn linear 1.5s;
+    -webkit-animation: fadeIn linear 1.5s;
+    -moz-animation: fadeIn linear 1.5s;
+    -o-animation: fadeIn linear 1.5s;
+    -ms-animation: fadeIn linear 1.5s;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    border-style: ridge;
     color: white;
-    background-color: dimgrey;
+    background-color: royalblue;
   }
 
   .answer-container > h3 {
-    font-weight:bold;
+    font-weight:bolder;
     font-size: xxx-large;
   }
   
+  .answer-container > h4 {
+    font-weight:bolder;
+    font-size: xx-large;
+  }
   @keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
@@ -86,7 +89,7 @@
 
 .btn3d.btn-primary {
 	box-shadow: 0 0 0 1px #4e96dd inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #4D5BBE, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
-	background-color: #4e96dd;
+	background-color: cornflowerblue;
 }
 
 .btn3d.btn-primary:active,

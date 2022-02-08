@@ -2,7 +2,7 @@
   max-height: fit-content;
 }
 .game-container{
-    display: flex; 
+    display: block; 
     justify-content:center; 
     text-align: -webkit-center;
 }
@@ -13,7 +13,7 @@
 }
 
 h1 {
-  animation-duration: 2s;
+  animation-duration: 1.5s;
   animation-name: slidein;
   padding: 3%;
   text-align: center;
