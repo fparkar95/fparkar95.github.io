@@ -32,7 +32,8 @@
               "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "node_modules/ngx-sharebuttons/themes/circles.scss",
-              "node_modules/ngx-sharebuttons/themes/modern.scss"
+              "node_modules/ngx-sharebuttons/themes/modern.scss",
+              "node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": []
           },
@@ -41,7 +42,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
+                  "maximumWarning": "800kb",
                   "maximumError": "1mb"
                 },
                 {

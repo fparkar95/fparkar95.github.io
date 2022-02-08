@@ -5,19 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ColorSelectorComponent } from './components/color-selector/color-selector.component';
 import { SpinnerOverlayComponent } from './components/spinner-overlay/spinner-overlay.component';
-import { ColorCircleComponent } from './components/color-circle/color-circle.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
-import { KeyboardComponent } from './components/keyboard/keyboard.component'
+import { KeyboardComponent } from './components/keyboard/keyboard.component';
+import { ColorBallComponent } from './components/color-ball/color-ball.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     ColorSelectorComponent,
     SpinnerOverlayComponent,
-    ColorCircleComponent,
     KeyboardComponent,
+    ColorBallComponent,
   ],
   imports: [
     BrowserModule,

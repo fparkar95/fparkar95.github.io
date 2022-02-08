@@ -6,40 +6,109 @@
 }
 
 .info-button{
-    padding: 10px;
-    margin-left: 2%;
-    border-radius: 60%;
-    border-color: black;
-    border: solid;
+    margin-top: -1%;
+    color: goldenrod;
+    border-radius: 100%;
 }
+
 .circle-container{
     display: flex;
     max-width: fit-content;
 }
 
-.answer-container{
-    margin-top: -5%;
-}
 
-p{
-    font-family: monospace;
-}
+.answer-container{
+    animation: fadeIn linear 1s;
+    -webkit-animation: fadeIn linear 1s;
+    -moz-animation: fadeIn linear 1s;
+    -o-animation: fadeIn linear 1s;
+    -ms-animation: fadeIn linear 1s;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-style: ridge;
+    border-radius: 25%;
+    color: white;
+    background-color: dimgrey;
+  }
+
+  .answer-container > h3 {
+    font-weight:bold;
+    font-size: xxx-large;
+  }
+  
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
   
 .button-grid {
-    margin-top: 5%;
-    padding: 10px;
     justify-items: center;
 }
 
-button:disabled,
-button[disabled]{
-  border: 1px solid #999999;
-  background-color: red;
-  color: white;
+
+.btn3d {
+	position: relative;
+	top: -6px;
+	border: 0;
+	transition: all 40ms linear;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 2px;
+	margin-right: 2px;
 }
 
+
+.btn3d.btn-primary:disabled{
+    box-shadow: 0 0 0 1px #b93802 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #AA0000, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+	background-color: #D73814;
+}
+.btn3d:active:focus,
+.btn3d:focus:hover,
+.btn3d:focus {
+	-moz-outline-style: none;
+	outline: medium none;
+}
+
+.btn3d.btn-danger {
+	box-shadow: 0 0 0 1px #b93802 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #AA0000, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+	background-color: #D73814;
+}
+
+.btn3d.btn-danger:active,
+.btn3d.btn-danger.active {
+	box-shadow: 0 0 0 1px #b93802 inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+	background-color: #D73814;
+}
+
+.btn3d:active,
+.btn3d.active {
+	top: 2px;
+}
+
+
+.btn3d.btn-primary {
+	box-shadow: 0 0 0 1px #4e96dd inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #4D5BBE, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+	background-color: #4e96dd;
+}
+
+.btn3d.btn-primary:active,
+.btn3d.btn-primary.active {
+	box-shadow: 0 0 0 1px #417fbd inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+	background-color: #4274D7;
+}
+
+.btn3d.btn-success {
+	box-shadow: 0 0 0 1px #31c300 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #5eb924, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+	background-color: #78d739;
+}
+
+.btn3d.btn-success:active,
+.btn3d.btn-success.active {
+	box-shadow: 0 0 0 1px #30cd00 inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+	background-color: #78d739;
+}
+
+
 .input-container {
-    margin-top: 5%;
     align-content: center;
 }
 

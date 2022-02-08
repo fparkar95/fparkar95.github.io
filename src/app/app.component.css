@@ -1,27 +1,48 @@
-.container{
+.main-layout{
+  max-height: fit-content;
+}
+.game-container{
     display: flex; 
     justify-content:center; 
     text-align: -webkit-center;
 }
 
+.wrapper{
+  background-color: antiquewhite;
+  filter:opacity(1000px);
+}
 
 h1 {
-  padding: 8%;
+  animation-duration: 1s;
+  animation-name: slidein;
+  padding: 3%;
   text-align: center;
-  font-family: 'Oswald', Helvetica, sans-serif;
-  font-size: 40px;
-  transform: skewY(-5deg);
-  letter-spacing: 4px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 60px;
+  transform: skewY(-2deg);
+  letter-spacing: 6px;
   word-spacing: -8px;
-  color: rgb(71, 166, 255);
+  color: rgb(85, 165, 240);
   text-shadow: 
     -1px -1px 0 rgb(34, 80, 178),
-    -2px -2px 0 rgb(34, 80, 178),
-    -3px -3px 0 rgb(34, 80, 178),
-    -4px -4px 0 rgb(34, 80, 178),
-    -5px -5px 0 rgb(34, 80, 178),
-    -6px -6px 0 rgb(34, 80, 178),
-    -7px -7px 0 rgb(34, 80, 178),
+    -2px -2px 0 rgb(34, 168, 178),
+    -3px -3px 0 rgb(34, 178, 77),
+    -4px -4px 0 rgb(231, 165, 66),
+    -5px -5px 0 rgb(178, 44, 34),
+    -6px -6px 0 rgb(178, 34, 166),
+    -7px -7px 0 rgb(209, 70, 186),
     -8px -8px 0 rgb(34, 80, 178),
-    -30px 20px 40px rgb(37, 37, 37)
+    -30px 20px 40px black
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }

@@ -144,10 +144,10 @@ export class ColorSelectorComponent implements OnInit, OnDestroy {
   openInfoDialog(){
     Swal.fire({
       title: 'Instructions',
-      html: `<h3>Guess as many colors in a row!</h3>
-              <p>Attempt #1 = 5 points</p>
-              <p>Attempt #2 = 2 points</p>
-              <p>Attempt #3 = 1 point</p>`,
+      html: `<h3 style="font-weight:bolder;" >Guess as many colors in a row!</h3>
+              <h4 style="font-weight:bolder; color:green;">Attempt #1 = 5 points</h4>
+              <h4 style="font-weight:bolder; color:blue;">Attempt #2 = 2 points</h4>
+              <h4 style="font-weight:bolder; color:orange;">Attempt #3 = 1 point</h4>`,
       icon: 'question',
       confirmButtonText: 'Got it!',
       allowOutsideClick: false,

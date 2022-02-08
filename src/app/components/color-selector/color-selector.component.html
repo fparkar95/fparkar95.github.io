@@ -1,16 +1,19 @@
 <div class="answer-container">
     <h3>Score: {{score}}
-        <button class="info-button btn btn-md" (click)="openInfoDialog()"><i class="fa fa-question-circle fa-2x" ></i></button>
+        <button class="btn info-button" (click)="openInfoDialog()">
+            <i class="fa fa-question-circle fa-3x"></i>
+        </button>
+        
     </h3>
-    <h4 *ngIf="!isShare">Guesses Remaining in this Round: {{4 - numOfTries}}</h4>
+    <h4 *ngIf="!isShare">Guesses Remaining: {{4 - numOfTries}}</h4>
 </div>
 <div class="circle-container">
-    <app-color-circle [hex]="correctHex"></app-color-circle>
+    <app-color-ball [hex]="correctHex"></app-color-ball>
 </div>  
 <div *ngIf="!isShare" class="input-container grid button-grid btn-group" role="group" aria-label="Three Column Button Matrix">
     <div *ngFor="let option of options">
         <button type="button" 
-        class="btn btn-outline-primary btn-lg" 
+        class="btn3d btn-primary btn-lg" 
         [disabled]="disabledOptions.includes(option)"
         (click)="optionSelected(option)">{{option.name}}
     </button>
