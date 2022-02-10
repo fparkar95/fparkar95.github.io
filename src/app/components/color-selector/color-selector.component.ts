@@ -111,6 +111,11 @@ export class ColorSelectorComponent implements OnInit, OnDestroy {
       }).then(async (result) => {
         if(result.dismiss === Swal.DismissReason.cancel){
           this.isShare = true;
+
+          navigator.share({
+            title: 'Colorz: Guess the color!',
+            url: 'https://fparkar95.github.io'
+          })
         }
         if (result.value) {
           this.restart();
@@ -119,6 +124,15 @@ export class ColorSelectorComponent implements OnInit, OnDestroy {
     }
     else{
       this.numOfTries++;
+      Swal.fire({
+        position:'center',
+        icon: 'warning',
+        title: `Nope`,
+        html:`<h3 style="font-weight:bolder;">Guesses Remaining: ${4-this.numOfTries}</h3>` ,
+        showConfirmButton: false,
+        allowOutsideClick: true,
+        timer: 1200
+      })
       localStorage.setItem("numOfTries", this.numOfTries.toString());
       this.disabledOptions.push(entry);
       localStorage.setItem("disabledOptions", JSON.stringify({data: this.disabledOptions}));
