@@ -13,6 +13,7 @@
 .circle-container{
     display: flex;
     max-width: fit-content;
+    margin: 25px;
 }
 
 
@@ -24,7 +25,8 @@
     -ms-animation: fadeIn linear 1.5s;
     font-family: Impact, unset;
     color: white;
-    background-color: royalblue;
+    background-color: indigo;
+    padding: 1%;
   }
 
   .answer-container > h3 {
@@ -43,6 +45,7 @@
   
 .button-grid {
     justify-items: center;
+    padding: 5%;
 }
 
 
@@ -87,14 +90,14 @@
 
 
 .btn3d.btn-primary {
-	box-shadow: 0 0 0 1px #4e96dd inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #4D5BBE, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 0 1px cornflowerblue inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 cornflowerblue, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
 	background-color: cornflowerblue;
 }
 
 .btn3d.btn-primary:active,
 .btn3d.btn-primary.active {
-	box-shadow: 0 0 0 1px #417fbd inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
-	background-color: #4274D7;
+	box-shadow: 0 0 0 1px cornflowerblue inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+	background-color: cornflowerblue;
 }
 
 .btn3d.btn-success {

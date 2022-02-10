@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable, Subject, Subscription, takeUntil } from 'rxjs';
-import { Color, ColorData, MockColorsResponse, Points } from 'src/app/models/colors';
+import { Observable, Subscription } from 'rxjs';
+import { Color, ColorData, MockColorsResponse  } from 'src/app/models/colors';
 import { GuessFeedback } from 'src/app/models/responses';
 import { ColorsService } from 'src/app/services/colors.service';
 import { DataStoreService } from 'src/app/services/data-store.service';

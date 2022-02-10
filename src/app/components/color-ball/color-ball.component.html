@@ -1,3 +1,5 @@
-<section class="stage">
-    <figure [style.background]="hex" class="ball bubble"></figure>
-</section>
+<div [@flip]="flipState"  class="flipper">
+    <section class="stage">
+        <figure [style.background]="hex" class="ball front"></figure>
+    </section>
+</div>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ColorSelectorComponent } from './components/color-selector/color-selector.component';
@@ -21,6 +21,7 @@ import { ColorBallComponent } from './components/color-ball/color-ball.component
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     ShareButtonsModule.withConfig({

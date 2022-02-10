@@ -1,119 +1,52 @@
-.ball {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    border-style: ridge;
-    position: relative;
-    }
-    .ball:before {
-      content: "";
-      position: absolute;
-      top: 1%;
-      left: 5%;
-      width: 90%;
-      height: 90%;
-      border-radius: 100%;
-      -webkit-filter: blur(5px);
-      filter: blur(5px);
-      z-index: 2; }
-    .ball:after {
-      content: "";
-      position: absolute;
-      display: none;
-      top: 5%;
-      left: 10%;
-      width: 80%;
-      height: 80%;
-      border-radius: 100%;
-      -webkit-filter: blur(1px);
-      filter: blur(1px);
-      z-index: 2;
-      -webkit-transform: rotateZ(-30deg);
-      transform: rotateZ(-30deg); }
-    .ball .shadow {
-      background: radial-gradient(circle, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
-      -webkit-transform: rotateX(90deg) translateZ(-160px);
-      transform: rotateX(90deg) translateZ(-160px);
-      z-index: 1; }
-    .ball.plain
-      .ball.plain:before, .ball.plain:after {
-        display: none; }
-    .ball.bubble {
-      -webkit-animation: bubble-anim 5s ease-in-out infinite;
-      animation: bubble-anim 5s ease-in-out infinite; }
-      .ball.bubble:after {
-        display: block;
-      }
-  
-  .stage {
-    width: 300px;
-    height: 300px;
-    display: inline-block;
-    margin: 20px;
-    -webkit-perspective: 1200px;
-    -moz-perspective: 1200px;
-    -ms-perspective: 1200px;
-    -o-perspective: 1200px;
-    perspective: 1200px;
-    -webkit-perspective-origin: 50% 50%;
-    -moz-perspective-origin: 50% 50%;
-    -ms-perspective-origin: 50% 50%;
-    -o-perspective-origin: 50% 50%;
-    perspective-origin: 50% 50%;
+
+.flipper {
+  transition: all 0.6s;
+  animation: flip 1s;
+  animation-iteration-count: 1;
+  transform-style: preserve-3d;
+}
+
+.flipper, .ball {
+	display: inline-block;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+  box-shadow: 0 0 20px black;
+}
+
+
+
+
+.front, .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.front {
+  transform: rotateY(0);
+
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+@keyframes flip {
+  25% {
+    transform: rotateY(180deg);
   }
-  body {
-    width: 300px;
-    margin: 20px auto;
-    background-repeat: no-repeat;
+
+  50% {
+    transform: rotateZ(180deg);
   }
   
-  @-webkit-keyframes bubble-anim {
-    0% {
-      -webkit-transform: scale(1);
-      transform: scale(1); }
+  74.999% {
+    transform: rotateX(179deg);
+  }
   
-    20% {
-      -webkit-transform: scaleY(0.95) scaleX(1.05);
-      transform: scaleY(0.95) scaleX(1.05); }
-  
-    48% {
-      -webkit-transform: scaleY(1.1) scaleX(0.9);
-      transform: scaleY(1.1) scaleX(0.9); }
-  
-    68% {
-      -webkit-transform: scaleY(0.98) scaleX(1.02);
-      transform: scaleY(0.98) scaleX(1.02); }
-  
-    80% {
-      -webkit-transform: scaleY(1.02) scaleX(0.98);
-      transform: scaleY(1.02) scaleX(0.98); }
-  
-    97%, 100% {
-      -webkit-transform: scale(1);
-      transform: scale(1); } }
-  
-  @keyframes bubble-anim {
-    0% {
-      -webkit-transform: scale(1);
-      transform: scale(1); }
-  
-    20% {
-      -webkit-transform: scaleY(0.95) scaleX(1.05);
-      transform: scaleY(0.95) scaleX(1.05); }
-  
-    48% {
-      -webkit-transform: scaleY(1.1) scaleX(0.9);
-      transform: scaleY(1.1) scaleX(0.9); }
-  
-    68% {
-      -webkit-transform: scaleY(0.98) scaleX(1.02);
-      transform: scaleY(0.98) scaleX(1.02); }
-  
-    80% {
-      -webkit-transform: scaleY(1.02) scaleX(0.98);
-      transform: scaleY(1.02) scaleX(0.98); }
-  
-    97%, 100% {
-      -webkit-transform: scale(1);
-      transform: scale(1); } }
+  75% {
+    transform: rotateX(180deg);
+  }
+}

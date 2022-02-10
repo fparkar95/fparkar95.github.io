@@ -3,36 +3,19 @@
 }
 .game-container{
     display: block; 
-    justify-content:center; 
     text-align: -webkit-center;
 }
 
 .wrapper{
-  background-color: antiquewhite;
-  filter:opacity(1000px);
+  display: block; 
+  max-width: 50%;
 }
 
-h1 {
+img {
+  max-width:100%;
   animation-duration: 1.5s;
   animation-name: slidein;
-  padding: 3%;
-  text-align: center;
-  font-family:Impact, unset;
-  font-size:xx-large;
-  transform: skewY(-2deg);
-  letter-spacing: 6px;
-  word-spacing: -8px;
-  color: rgb(85, 165, 240);
-  text-shadow: 
-    -1px -1px 0 rgb(34, 80, 178),
-    -2px -2px 0 rgb(34, 168, 178),
-    -3px -3px 0 rgb(34, 178, 77),
-    -4px -4px 0 rgb(231, 165, 66),
-    -5px -5px 0 rgb(178, 44, 34),
-    -6px -6px 0 rgb(178, 34, 166),
-    -7px -7px 0 rgb(209, 70, 186),
-    -8px -8px 0 rgb(34, 80, 178),
-    -30px 20px 40px black
+  margin-left: 50%;
 }
 
 @keyframes slidein {
@@ -42,7 +25,7 @@ h1 {
   }
 
   to {
-    margin-left: 0%;
+    margin-left: 50%;
     width: 100%;
   }
 }
