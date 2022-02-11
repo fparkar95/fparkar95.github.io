@@ -1,11 +1,11 @@
 <div class="answer-container">
     <h3>Score: {{score}}
         <button class="btn info-button" (click)="openInfoDialog()">
-            <i class="fa fa-question-circle fa-3x"></i>
+            <i class="fa fa-question-circle fa-2x"></i>
         </button>
         
     </h3>
-    <h4 *ngIf="!isShare">Guesses Remaining: {{4 - numOfTries}}</h4>
+    <h4 *ngIf="!isShare">Guesses Left: {{4 - numOfTries}}</h4>
 </div>
 <div class="circle-container">
     <app-color-ball [hex]="correctHex"></app-color-ball>
@@ -22,7 +22,7 @@
 <div *ngIf="isShare">
     <share-buttons theme= "circles-dark"
         [include]="['copy', 'facebook', 'email', 'messenger','sms','whatsapp']"
-        url="https://fparkar95.github.io/"
+        url={{url}}
         description="My score was {{score}} in Colorz!! Your turn to play!"
         class="pt-5">
     </share-buttons>

@@ -6,14 +6,15 @@
 }
 
 .info-button{
-    color: goldenrod;
+    color: black;
     border-radius: 100%;
 }
 
 .circle-container{
     display: flex;
     max-width: fit-content;
-    margin: 25px;
+    margin-top: 40px;
+    margin-bottom: 5px;
 }
 
 
@@ -24,19 +25,23 @@
     -o-animation: fadeIn linear 1.5s;
     -ms-animation: fadeIn linear 1.5s;
     font-family: Impact, unset;
-    color: white;
-    background-color: indigo;
-    padding: 1%;
+    border-radius: 20%;
+    border-color: black;
+    border-style: ridge;
+    align-items: center;
   }
 
   .answer-container > h3 {
     font-weight:bolder;
-    font-size: xx-large
+    font-size: large;
+    color: purple;
+    margin-left: 2%;
   }
   
   .answer-container > h4 {
     font-weight:bolder;
-    font-size: x-large;
+    font-size: small;
+    margin-top: -15px;
   }
   @keyframes fadeIn {
     0% {opacity:0;}
@@ -90,14 +95,14 @@
 
 
 .btn3d.btn-primary {
-	box-shadow: 0 0 0 1px cornflowerblue inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 cornflowerblue, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
-	background-color: cornflowerblue;
+	box-shadow: 0 0 0 1px purple inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 purple, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+	background-color: purple;
 }
 
 .btn3d.btn-primary:active,
 .btn3d.btn-primary.active {
-	box-shadow: 0 0 0 1px cornflowerblue inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
-	background-color: cornflowerblue;
+	box-shadow: 0 0 0 1px purple inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+	background-color: purple;
 }
 
 .btn3d.btn-success {

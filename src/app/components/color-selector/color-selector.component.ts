@@ -25,6 +25,7 @@ export class ColorSelectorComponent implements OnInit, OnDestroy {
   private mockUrl: string = 'assets/data.json';
   disabledOptions: Color[] = []
   sub:Subscription
+  url: string = 'https://fparkar95.github.io';
 
   public score$: Observable<number>;
 
@@ -81,10 +82,14 @@ export class ColorSelectorComponent implements OnInit, OnDestroy {
 
       Swal.fire({
         title: 'CORRECT!!!',
-        html: `<h3>${this.feedback.compliment}</h3>
-               <h4>The correct answer is ${this.correctColor.name}</h4>`,
+        html: `<h3 style="color: black;">${this.feedback.compliment}</h3>
+               <h4 style="color:${this.correctHex}; font-weight: bolder; text-shadow: -0.5px 0.5px 0 #000,
+               0.5px 0.5px 0 #000,
+              0.5px -0.5px 0 #000,
+             -0.5px -0.5px 0 #000;">Correct Answer: ${this.correctColor.name}</h4>`,
         icon: 'success',
         confirmButtonText: 'Next!',
+        confirmButtonColor: "green",
         allowOutsideClick: false
       }).then(async (result) => {
         if (result.value) {
@@ -100,10 +105,14 @@ export class ColorSelectorComponent implements OnInit, OnDestroy {
       
       Swal.fire({
         title: 'WRONG!!!',
-        html: `<h3>${this.feedback.insult}</h3>
-              <h4>The correct answer is ${this.correctColor.name}</h4>`,
+        html: `<h3 style="color: black;">${this.feedback.insult}</h3>
+               <h4 style="color:${this.correctHex}; font-weight: bolder; text-shadow: -0.5px 0.5px 0 #000,
+               0.5px 0.5px 0 #000,
+              0.5px -0.5px 0 #000,
+             -0.5px -0.5px 0 #000;">Correct Answer: ${this.correctColor.name}</h4>`,
         icon: 'error',
         confirmButtonText: 'Try Again?',
+        confirmButtonColor: "purple",
         showCancelButton: true,
         cancelButtonText: "Share",
         cancelButtonColor: "green",
@@ -114,7 +123,7 @@ export class ColorSelectorComponent implements OnInit, OnDestroy {
 
           navigator.share({
             title: 'Colorz: Guess the color!',
-            url: 'https://fparkar95.github.io'
+            url: this.url
           })
         }
         if (result.value) {
@@ -128,7 +137,7 @@ export class ColorSelectorComponent implements OnInit, OnDestroy {
         position:'center',
         icon: 'warning',
         title: `Nope`,
-        html:`<h3 style="font-weight:bolder;">Guesses Remaining: ${4-this.numOfTries}</h3>` ,
+        html:`<h3 style="font-weight:bolder;">Guesses left: ${4-this.numOfTries}</h3>` ,
         showConfirmButton: false,
         allowOutsideClick: true,
         timer: 1200
@@ -158,12 +167,14 @@ export class ColorSelectorComponent implements OnInit, OnDestroy {
   openInfoDialog(){
     Swal.fire({
       title: 'Instructions',
-      html: `<h3 style="font-weight:bolder;" >Guess as many colors in a row!</h3>
+      html: `<h3 style="font-weight:bolder; color: black;" >Guess as many colors in a row!</h3>
               <h4 style="font-weight:bolder; color:green;">Attempt #1 = 5 points</h4>
               <h4 style="font-weight:bolder; color:blue;">Attempt #2 = 2 points</h4>
               <h4 style="font-weight:bolder; color:orange;">Attempt #3 = 1 point</h4>`,
       icon: 'question',
+      iconColor: 'purple',
       confirmButtonText: 'Got it!',
+      confirmButtonColor: 'purple',
       allowOutsideClick: false,
       showCloseButton: true
     })
