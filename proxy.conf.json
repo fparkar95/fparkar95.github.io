@@ -1,6 +1,9 @@
 {
     "/api": {
       "target": "https://l5snb66zh4.execute-api.us-west-2.amazonaws.com",
-      "secure": false
+      "pathRewrite": { "^/api": "" },
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "debug"
     }
   }
